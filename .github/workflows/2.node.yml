@@ -12,6 +12,11 @@ jobs:
           node-version: '22'
       - name: Install and Run Tests
         working-directory: ./node-ex
+        env:
+          CI: true
+          NODE_ENV: production
         run: |
+          echo "CI=$CI"
+          echo "NODE_ENV=$NODE_ENV"
           npm install
           npm test
