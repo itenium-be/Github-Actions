@@ -1,0 +1,17 @@
+name: "10. Script If"
+run-name: "10. Script If"
+on: [push]
+
+jobs:
+  run-conditional-steps:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run custom script to check condition
+      run: ./if-check.sh
+    - name: Run this step if condition is met
+      if: env.condition_met == 'true'
+      run: echo "The condition was met. Running conditional step."
+    - name: Run this step if condition is not met
+      if: env.condition_met == 'false'
+      run: echo "The condition was not met. Running alternative step."
