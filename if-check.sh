@@ -1,3 +1,3 @@
 #!/bin/bash
 
-"condition_met=true" >> $GITHUB_ENV
+echo "condition_met=true" >> $GITHUB_ENV
