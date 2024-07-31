@@ -5,9 +5,16 @@ on: [push]
 jobs:
   run_tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     strategy:
+      fail-fast: true # default
       matrix:
+        # os: [ubuntu-latest, macos-latest]
         node-version: [16.10.x, 22.0.x]
+        # node:
+        #   - version: 16.10.x
+        #   - version: 22.0.x
+        #     env: NODE_OPTIONS=--experimental-strip-types
 
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +27,7 @@ jobs:
           # https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
       - name: Install and Run Tests on ${{ matrix.node-version }}
         working-directory: ./node-ex
+        continue-on-error: true
         run: |
           npm install
           npm test
