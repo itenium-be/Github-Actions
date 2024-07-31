@@ -6,6 +6,6 @@ jobs:
   call-reusable-workflow:
     uses: ./.github/workflows/6.input-part.yml
     with:
-      your_name: "Hello"
+      your_name: "itenium"
     secrets:
       PASS: "Sssh!"
