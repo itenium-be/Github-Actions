@@ -3,8 +3,8 @@ name: "6. Inputs - Reusable Part"
 on:
   workflow_call:
     inputs:
-      greeting:
-        description: 'Greeting message'
+      your_name:
+        description: 'Greeting who?'
         required: true
         type: string
     secrets:
@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting
-        run: echo "${{ inputs.greeting }} in ${{ secrets.PASS }}!"
+        run: echo "Hello ${{ inputs.your_name }} in ${{ secrets.PASS }}!"

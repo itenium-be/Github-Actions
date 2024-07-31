@@ -6,6 +6,6 @@ jobs:
   call-reusable-workflow:
     uses: ./.github/workflows/6.input-part.yml
     with:
-      greeting: "Hello"
+      your_name: "Hello"
     secrets:
       PASS: "Sssh!"
