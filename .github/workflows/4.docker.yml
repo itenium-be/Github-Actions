@@ -6,6 +6,7 @@ on: [push]
 # https://github.com/itenium-be/Github-Actions/settings/secrets/actions
 env:
   THE_SECRET: '${{ secrets.THE_SECRET }}'
+  OTHER: "ssh"
 
 jobs:
   run-busybox:
@@ -13,6 +14,8 @@ jobs:
     steps:
       - run: docker run busybox echo "Hello, World!"
       - run: echo "THE_SECRET=${{ env.THE_SECRET }}"
+      - run: echo -n "${{ env.THE_SECRET }}" | xxd -ps
+      - run: echo -n "${{ secrets.THE_SECRET }}" | xxd -ps
 
   build_img:
     runs-on: ubuntu-latest
@@ -22,4 +25,4 @@ jobs:
         working-directory: ./docker
         run: docker build -t hello-world-busybox .
       - name: Run
-        run: docker run -e THE_SECRET="${{ env.THE_SECRET }}" hello-world-busybox
+        run: docker run -e THE_SECRET="${{ env.OTHER }}" hello-world-busybox
