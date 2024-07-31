@@ -1,9 +1,8 @@
-name: Dump All Variables
-
+name: "9. Dump All Variables"
 on: [push]
 
 jobs:
-  one:
+  dump_all_vars:
     runs-on: ubuntu-latest
     steps:
       - name: Dump Github context

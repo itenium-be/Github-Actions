@@ -1,0 +1,19 @@
+name: "1. Pull Requests"
+run-name: "1. Pull Requests"
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - 'feature/**'
+
+# More PR types:
+# assigned unassigned labeled unlabeled opened edited closed reopened synchronize converted_to_draft
+# locked unlocked enqueued dequeued milestoned demilestoned ready_for_review review_requested
+# review_request_removed auto_merge_enabled auto_merge_disabled
+
+jobs:
+  pull_request_re_opened:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pusher.name != 'Laoujin'}}
+    steps:
+      - run: echo 'Pushed by ${{ github.event.pusher.name }}'
