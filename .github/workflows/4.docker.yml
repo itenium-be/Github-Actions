@@ -6,9 +6,15 @@ jobs:
   run-busybox:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Run BusyBox container
-        run: |
+      - uses: actions/checkout@v4
+      - run: |
           docker run busybox echo "Hello, World!"
+
+  build_img:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Build & Run"
+        working-directory: ./node-ex
+        run: |
+          docker build -t hello-world-busybox .
+          docker run hello-world-busybox
