@@ -3,6 +3,8 @@ run-name: "1. Pull Requests"
 on:
   pull_request:
     types: [opened, reopened]
+    branches:
+      - 'master'
 
 # More PR types:
 # assigned unassigned labeled unlabeled opened edited closed reopened synchronize converted_to_draft
