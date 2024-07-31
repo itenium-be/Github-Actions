@@ -4,12 +4,16 @@ on: [push]
 
 jobs:
   run_tests:
+    strategy:
+      matrix:
+        node-version: [16.10.x, 22.0.x]
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: ${{ matrix.node-version }}
       - name: Install and Run Tests
         working-directory: ./node-ex
         run: |
