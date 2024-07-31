@@ -1,0 +1,16 @@
+name: "7. Runners"
+run-name: "7. Runners"
+on: push
+
+jobs:
+  windoze:
+    runs-on: windows-latest
+    steps:
+      - run: choco install gh
+      - run: gh version
+
+  macOs:
+    runs-on: macos-latest
+    steps:
+      - run: brew install gh
+      - run: gh version
