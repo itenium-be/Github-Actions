@@ -6,6 +6,9 @@ jobs:
   call-reusable-workflow:
     # Also see the marketplace for more actions:
     # https://github.com/marketplace?type=actions
+
+    # Lots of commonly used examples:
+    # https://github.com/actions/starter-workflows
     uses: ./.github/workflows/06.input-part.yml
     with:
       your_name: "itenium"

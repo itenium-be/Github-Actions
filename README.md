@@ -13,3 +13,4 @@ Actions
 -------
 
 - [VSCode Plugin](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
+- [Examples](https://github.com/actions/starter-workflows)
