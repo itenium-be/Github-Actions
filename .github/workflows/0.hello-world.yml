@@ -1,12 +1,11 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: "0. Hello World"
+run-name: "0. ${{ github.actor }}'s GitHub Actions Hello World 🚀"
 on: [push]
 
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "github is ${{ toJson(github) }}"
       - run: echo "github.actor is ${{ github.actor }}"
       - run: echo "github.event_name is ${{ github.event_name }}"
       - run: echo "runner.os is ${{ runner.os }}"
