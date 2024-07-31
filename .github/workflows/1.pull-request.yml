@@ -29,3 +29,7 @@ jobs:
     if: ${{ !startsWith(github.ref, 'refs/tags/') }}
     steps:
       - run: echo 'Code not for tag pushes. Ref is ${{ github.ref }}'
+
+
+# Trigger this one by re-opening PR:
+# https://github.com/itenium-be/Github-Actions/pull/1
