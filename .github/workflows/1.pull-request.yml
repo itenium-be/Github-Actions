@@ -14,6 +14,11 @@ on:
 jobs:
   pull_request_re_opened:
     runs-on: ubuntu-latest
+    steps:
+      - run: echo "PR Opened"
+
+  by_someone_else:
+    runs-on: ubuntu-latest
     if: ${{ github.event.pusher.name != 'Laoujin'}}
     steps:
       - run: echo 'Pushed by ${{ github.event.pusher.name }}'
