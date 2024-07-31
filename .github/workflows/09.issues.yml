@@ -17,9 +17,13 @@ jobs:
     steps:
       - run: echo "issue is ${{ toJson(github.event.issue) }}"
       - name: Add CUSTOM label
+        if: ${{ contains(github.event.issue.title, 'custom') }}
         run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: CUSTOM
+      - name: NOT adding CUSTOM label
+        if: ${{ !contains(github.event.issue.title, 'custom') }}
+        run: echo "Not adding CUSTOM label because title did not contain word 'custom'"
