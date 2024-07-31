@@ -7,3 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "github.actor is ${{ github.actor }}"
+      - run: echo "github.event_name is ${{ github.event_name }}"
+      - run: echo "runner.os is ${{ runner.os }}"
+      - run: echo "github.ref is ${{ github.ref }}"
+      - run: echo "github.repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "github.repository is ${{ github.repository }}"
+      - name: List files in the repository
+        run: |
+          ls -al ${{ github.workspace }}
+      - run: echo "job.status is ${{ job.status }}."
