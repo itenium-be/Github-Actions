@@ -5,17 +5,24 @@ on:
     types: [opened, reopened]
     branches:
       - 'master'
+      - 'release/**'
 
 # More PR types:
 # assigned unassigned labeled unlabeled opened edited closed reopened synchronize converted_to_draft
 # locked unlocked enqueued dequeued milestoned demilestoned ready_for_review review_requested
 # review_request_removed auto_merge_enabled auto_merge_disabled
 
+# More "on:" PRs:
+# pull_request_review (submitted, edited, ...)
+# pull_request_target (assigned, unassigned, ...)
+# pull_request_review_comment (created, edited, ...)
+
 jobs:
   pull_request_re_opened:
     runs-on: ubuntu-latest
     steps:
       - run: echo "PR Opened"
+      - run: echo "github.event is ${{ toJson(github.event) }}"
 
   by_someone_else:
     runs-on: ubuntu-latest

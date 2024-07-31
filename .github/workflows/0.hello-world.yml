@@ -17,3 +17,40 @@ jobs:
         run: |
           ls -al ${{ github.workspace }}
       - run: echo "job.status is ${{ job.status }}."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# More ons:
+# https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
+
+# on:
+#   branch_protection_rule:
+#     types: [created, deleted]
+
+# When someone deletes a tag or branch
+# on:
+#   delete
+
+# on:
+#   discussion:
+#     types: [answered, pinned, ...]
+
+# More ons:
+# fork, issues, registry_package, release, ...
