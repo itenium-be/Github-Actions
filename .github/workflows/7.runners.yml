@@ -3,12 +3,14 @@ run-name: "7. Runners"
 on: push
 
 jobs:
+  # For: msbuild, Win32 APIs, IIS, COM Components, ...
   windoze:
     runs-on: windows-latest
     steps:
       - run: choco install gh
       - run: gh version
 
+  # For: Homebrew, Safari, Xcode, AppleScript, ...
   macOs:
     runs-on: macos-latest
     steps:
