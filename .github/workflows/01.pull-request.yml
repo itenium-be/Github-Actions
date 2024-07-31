@@ -27,9 +27,18 @@ jobs:
   by_someone_else:
     runs-on: ubuntu-latest
     if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+    # More functions:
+    # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/expressions
+    # String fns: contains, startsWith, endsWith, toJson, fromJson
+    # Status check fns: success, failure, always, cancelled
     steps:
       - run: echo 'Code not for tag pushes. Ref is ${{ github.ref }}'
 
 
 # Trigger this one by re-opening PR:
 # https://github.com/itenium-be/Github-Actions/pull/1
+
+
+# Object filters:
+# Given: fruits=[{name: "apple"}, {name: "orange"}]
+# fruits.*.name => ["apple", "orange"]
