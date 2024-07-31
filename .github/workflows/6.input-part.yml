@@ -1,0 +1,19 @@
+name: "6. Inputs - Reusable Part"
+
+on:
+  workflow_call:
+    inputs:
+      greeting:
+        description: 'Greeting message'
+        required: true
+        type: string
+    secrets:
+      PASS:
+        required: false
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "${{ inputs.greeting }} in ${{ secrets.PASS }}!"

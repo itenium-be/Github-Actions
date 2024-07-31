@@ -1,0 +1,10 @@
+name: "6. Inputs"
+run-name: "6. Inputs"
+on: [push]
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/6.input-part.yml
+    with:
+      greeting: "Hello"
+      PASS: "Sssh!"
