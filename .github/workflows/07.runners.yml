@@ -9,6 +9,8 @@ jobs:
     steps:
       - run: choco install gh
       - run: gh version
+      - run: echo %PATH%
+        shell: cmd
 
   # For: Homebrew, Safari, Xcode, AppleScript, ...
   macOs:
