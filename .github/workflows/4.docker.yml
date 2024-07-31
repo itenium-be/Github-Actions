@@ -2,11 +2,17 @@ name: "4. Docker Container"
 run-name: "4. Docker Container"
 on: [push]
 
+# As defined in:
+# https://github.com/itenium-be/Github-Actions/settings/secrets/actions
+env:
+  THE_SECRET: '${{ secrets.THE_SECRET }}'
+
 jobs:
   run-busybox:
     runs-on: ubuntu-latest
     steps:
       - run: docker run busybox echo "Hello, World!"
+      - run: echo "THE_SECRET=${{ env.THE_SECRET }}"
 
   build_img:
     runs-on: ubuntu-latest
@@ -16,6 +22,4 @@ jobs:
         working-directory: ./docker
         run: docker build -t hello-world-busybox .
       - name: Run
-        env:
-          VARZ: World
-        run: docker run hello-world-busybox
+        run: docker run -e THE_SECRET="${{ env.THE_SECRET }}" hello-world-busybox
