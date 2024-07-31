@@ -1,0 +1,14 @@
+name: "4. Docker Container"
+run-name: "4. Docker Container"
+on: [push]
+
+jobs:
+  run-busybox:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run BusyBox container
+        run: |
+          docker run busybox echo "Hello, World!"
