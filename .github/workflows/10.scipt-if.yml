@@ -5,6 +5,8 @@ on: [push]
 jobs:
   run-conditional-steps:
     runs-on: ubuntu-latest
+    env:
+      condition_met:
     steps:
     - uses: actions/checkout@v3
     - run: chmod +x ./if-check.sh
