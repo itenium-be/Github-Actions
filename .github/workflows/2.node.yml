@@ -1,0 +1,17 @@
+name: "2. Node"
+run-name: "2. Node"
+on: [push]
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install and Run Tests
+        working-directory: ./node-ex
+        run: |
+          npm install
+          npm test
