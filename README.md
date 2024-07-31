@@ -1,6 +1,8 @@
 Github Actions
 ==============
 
+It's all [Yaml](https://itenium.be/blog/productivity/yaml-tutorial/)
+
 Pages
 -----
 
