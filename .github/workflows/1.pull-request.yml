@@ -26,6 +26,6 @@ jobs:
 
   by_someone_else:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pusher.name != 'Laoujin'}}
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
     steps:
-      - run: echo 'Pushed by ${{ github.event.pusher.name }}'
+      - run: echo 'Code not for tag pushes. Ref is ${{ github.ref }}'
