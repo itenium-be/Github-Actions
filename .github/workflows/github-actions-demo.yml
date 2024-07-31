@@ -6,4 +6,4 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "github:actor:"
+      - run: echo "github.actor:"
