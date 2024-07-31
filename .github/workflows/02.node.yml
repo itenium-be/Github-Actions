@@ -16,6 +16,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: node-ex/package-lock.json
+          # registry-url: 'https://registry.npmjs.org'
+          # https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
       - name: Install and Run Tests on ${{ matrix.node-version }}
         working-directory: ./node-ex
         run: |
