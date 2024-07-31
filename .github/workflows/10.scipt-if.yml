@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - run: chmod +x ./if-check.sh
     - name: Run custom script to check condition
       run: ./if-check.sh
     - name: Run this step if condition is met
