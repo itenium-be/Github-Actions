@@ -1,4 +1,4 @@
 FROM busybox
 
-ENV THE_SECRET=$THE_SECRET
-CMD echo "Hello, $THE_SECRET"
+ENV WORLD=$WORLD
+CMD echo "Hello, $WORLD"
