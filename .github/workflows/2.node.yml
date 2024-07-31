@@ -4,16 +4,18 @@ on: [push]
 
 jobs:
   run_tests:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.10.x, 22.0.x]
 
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          cache-dependency-path: node-ex/package-lock.json
       - name: Install and Run Tests on ${{ matrix.node-version }}
         working-directory: ./node-ex
         run: |
