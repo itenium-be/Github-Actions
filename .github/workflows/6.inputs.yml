@@ -7,4 +7,5 @@ jobs:
     uses: ./.github/workflows/6.input-part.yml
     with:
       greeting: "Hello"
+    secrets:
       PASS: "Sssh!"
