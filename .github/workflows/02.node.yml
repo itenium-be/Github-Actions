@@ -1,5 +1,5 @@
-name: "2. Node"
-run-name: "2. Node"
+name: "02. Node"
+run-name: "02. Node"
 on: [push]
 
 jobs:

@@ -1,4 +1,4 @@
-name: "6. Inputs - Reusable Part"
+name: "06. Inputs - Reusable Part"
 
 on:
   workflow_call:

@@ -1,5 +1,5 @@
-name: "1. Pull Requests"
-run-name: "1. Pull Requests"
+name: "01. Pull Requests"
+run-name: "01. Pull Requests"
 on:
   pull_request:
     types: [opened, reopened]

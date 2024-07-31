@@ -1,5 +1,5 @@
-name: "8. .NET"
-run-name: "8. .NET"
+name: "08. .NET"
+run-name: "08. .NET"
 on: [push]
 
 jobs:

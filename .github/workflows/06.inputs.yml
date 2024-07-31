@@ -1,10 +1,10 @@
-name: "6. Inputs"
-run-name: "6. Inputs"
+name: "06. Inputs"
+run-name: "06. Inputs"
 on: [push]
 
 jobs:
   call-reusable-workflow:
-    uses: ./.github/workflows/6.input-part.yml
+    uses: ./.github/workflows/06.input-part.yml
     with:
       your_name: "itenium"
     secrets:

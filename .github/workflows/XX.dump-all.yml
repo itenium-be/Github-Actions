@@ -1,5 +1,5 @@
-name: "9. Dump All Variables"
-run-name: "9. Dump All Variables"
+name: "XX. Dump All Variables"
+run-name: "XX. Dump All Variables"
 on: [push]
 
 jobs:

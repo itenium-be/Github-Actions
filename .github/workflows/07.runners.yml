@@ -1,5 +1,5 @@
-name: "7. Runners"
-run-name: "7. Runners"
+name: "07. Runners"
+run-name: "07. Runners"
 on: push
 
 jobs:
