@@ -6,15 +6,4 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "github.actor: ${{ github.actor }}"
-      - run: echo "github.event_name: ${{ github.event_name }}"
-      - run: echo "runner.os: ${{ runner.os }}"
-      - run: echo "github.ref: ${{ github.ref }}"
-      - run: echo "github.repository: ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "github.repository: ${{ github.repository }}"
-      - name: List files in the repository
-        run: |
-          ls -al ${{ github.workspace }}
-      - run: echo "job.status: ${{ job.status }}."
+      - run: echo "github:actor:"
