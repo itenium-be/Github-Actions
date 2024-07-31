@@ -1,4 +1,4 @@
 FROM busybox
 
-ENV VARS=$VARZ
+ENV VARZ=$VARZ
 CMD echo "Hello, $VARZ"

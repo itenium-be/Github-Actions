@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: "Build & Run"
+      - name: Build
         working-directory: ./docker
+        run: docker build -t hello-world-busybox .
+      - name: Run
         env:
           VARZ: World
-        run: |
-          docker build -t hello-world-busybox .
-          docker run hello-world-busybox
+        run: docker run hello-world-busybox
