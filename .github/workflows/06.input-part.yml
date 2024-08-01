@@ -1,6 +1,10 @@
 # Reusable Workflow:
 name: "06. Inputs - Reusable Part"
 
+# Other possibility:
+# Composite Workflows by creating itenium-be/composite-action repository
+# And "uses: itenium-be/composite-action@v1"
+
 on:
   workflow_call:
     inputs:
