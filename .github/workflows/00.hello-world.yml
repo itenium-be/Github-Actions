@@ -12,7 +12,7 @@ jobs:
       - run: echo "github.ref is ${{ github.ref }}"
       - run: echo "github.repository is ${{ github.repository }}."
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: List files in the repository
         run: |
           ls -al ${{ github.workspace }}

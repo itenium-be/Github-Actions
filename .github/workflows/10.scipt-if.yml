@@ -8,7 +8,7 @@ jobs:
     env:
       condition_met:
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
     - run: chmod +x ./if-check.sh
     - name: Run custom script to check condition
       run: ./if-check.sh
